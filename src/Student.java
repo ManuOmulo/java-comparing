@@ -4,7 +4,7 @@ import java.util.List;
 public class Student {
   private String name;
   private int id;
-  private static int INITIAL_ID = 1000;
+  private static int INITIAL_ID = 1001;
   private List<Subject> subjects = new ArrayList<>();
 
   public Student(String name) {
@@ -29,7 +29,7 @@ public class Student {
     return totalGradePoints / totalHours;
   }
 
-  public void getSubjects() {
+  private void getSubjects() {
     for (Subject subject : subjects) {
       System.out.printf("%s - %s(%.2f GP)\n", subject.getName(), subject.getGrade(), subject.getGradePoints());
     }
@@ -41,5 +41,6 @@ public class Student {
         """, id, name, getGpa()
     );
     getSubjects();
+    System.out.println();
   }
 }

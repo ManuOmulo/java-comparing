@@ -5,5 +5,12 @@ public class Main {
     emmanuel.addSubject("Maths", "B+", 6);
     emmanuel.addSubject("Computer Studies", "A", 7);
     emmanuel.printStudentDetails();
+
+    Student mary = new Student("MaryBeth Akinyi");
+    mary.addSubject("Biology", "B+", 7);
+    mary.addSubject("Kiswahili", "A-", 5);
+    mary.addSubject("English", "A-", 5);
+    mary.addSubject("Design", "B", 6);
+    mary.printStudentDetails();
   }
 }
