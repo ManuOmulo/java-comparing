@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Main {
   public static void main(String[] args) {
     Student emmanuel = new Student("Emmanuel Omulo");
@@ -12,5 +15,22 @@ public class Main {
     mary.addSubject("English", "A-", 5);
     mary.addSubject("Design", "B", 6);
     mary.printStudentDetails();
+
+    rankStudents(mary, emmanuel);
+  }
+
+  public static void rankStudents(Student... students) {
+    Comparator<Student> gpaSorter = new StudentGPAComparator();
+    Arrays.sort(students, gpaSorter.reversed());
+
+    System.out.println("-".repeat(50));
+    System.out.println("Sorted list of students by grade");
+    System.out.println("-".repeat(50));
+
+    for (Student student : students) {
+      System.out.printf("%s (%.2f)\n", student.getName(), student.getGpa());
+    }
+
+    System.out.println("-".repeat(50));
   }
 }

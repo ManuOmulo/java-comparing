@@ -17,6 +17,10 @@ public class Student {
     subjects.add(subject);
   }
 
+  public String getName() {
+    return name;
+  }
+
   public double getGpa() {
     double totalGradePoints = 0;
     double totalHours = 0;
